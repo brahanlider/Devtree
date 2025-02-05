@@ -1,9 +1,12 @@
 ## 📜 INTALLATION 📜
 - npm init
 - npm i express
-- npm i -D nodemon
+- npm i -D nodemon => para reiniciar el servidor
 - npm i -D typescript ts-node
 - npm i --save-dev @types/express
+- npm i mongoose
+- npm i dotenv => para variables de entorno
+- npm i cors => para permitir peticiones de otros servidores
 
 # [DEVTREE](https://github.com/brahan/devrtree)
 
@@ -25,6 +28,7 @@ DevTree es una plataforma en línea que permite a desarrolladores, diseñadores,
 | Express         | 4.21.2  | Lenguaje de Marcas de Hipertexto |
 | React           |   18    | Hojas de Estilo en Cascada       |
 | Tailwind        |    5    | Conjunto de íconos vectoriales   |
+| ts              | 5 .7.3  | Conjunto de íconos vectoriales   |
 | ts              | 5 .7.3  | Conjunto de íconos vectoriales   |
 
 ## 🤗 Redes sociales 🤗
