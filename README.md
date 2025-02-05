@@ -25,6 +25,7 @@ DevTree es una plataforma en línea que permite a desarrolladores, diseñadores,
 | Express         | 4.21.2  | Lenguaje de Marcas de Hipertexto |
 | React           |   18    | Hojas de Estilo en Cascada       |
 | Tailwind        |    5    | Conjunto de íconos vectoriales   |
+| ts              | 5 .7.3  | Conjunto de íconos vectoriales   |
 
 ## 🤗 Redes sociales 🤗
 - 💎 GitHub: https://github.com/brahanlider 💎
