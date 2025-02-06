@@ -18,7 +18,7 @@ DevTree es una plataforma en línea que permite a desarrolladores, diseñadores,
 ## 💻 Instalación 💻
 - Ubicarse en la carpeta que contendrá el proyecto
 - Abrir terminal de comandos
-  - git clone https://github
+  - git clone https://github.com/brahanlider/Devtree.git
   - cd devtree
   - Abrir el proyecto con un servidor en un cliente
 
