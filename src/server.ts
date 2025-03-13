@@ -7,7 +7,7 @@ const app = express();
 
 connectDB()
 
-//Leer datos de form
+//Leer datos de form (middleware) routes => index handlers
 app.use(express.json());
 
 app.use("/", router);
