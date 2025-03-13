@@ -7,7 +7,11 @@
 - npm i mongoose
 - npm i dotenv => para variables de entorno
 - npm i cors => para permitir peticiones de otros servidores
-
+- npm i bcrypt
+- npm i --save-dev @types/bcrypt
+- npm i slug => para crear url amigables
+- npm i --save-dev @types/slug
+- npm i express-validator => para validar los datos
 # [DEVTREE](https://github.com/brahan/devrtree)
 
 [![Img - DEVTREE](./img/devtree-eg.png)](https://github.com/el)
