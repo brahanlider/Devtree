@@ -3,6 +3,7 @@ import slug from "slug";
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
 import { validationResult } from "express-validator";
+import { generateJWT } from "../utils/jwt";
 
 export const createAccount = async (req: Request, res: Response) => {
   //__________________________________ / Importación dinámica de slug
@@ -59,5 +60,7 @@ export const login = async (req: Request, res: Response) => {
     return;
   }
 
-  res.send("Usuario logueado correctamente..........");
+  const token = generateJWT({ id: user._id });
+
+  res.send(token);
 };
