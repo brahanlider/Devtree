@@ -8,7 +8,7 @@ export const handleInputErrors = (
 ) => {
   // Manejar errores de validación
   let errors = validationResult(req);
-  console.log("Desde validation ts");
+
   if (!errors.isEmpty()) {
     res.status(400).json({ errors: errors.array() });
     return;

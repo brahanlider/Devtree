@@ -12,6 +12,9 @@
 - npm i slug => para crear url amigables
 - npm i --save-dev @types/slug
 - npm i express-validator => para validar los datos
+- npm i cors
+- npm i -D @types/cors
+
 # [DEVTREE](https://github.com/brahan/devrtree)
 
 [![Img - DEVTREE](./img/devtree-eg.png)](https://github.com/el)

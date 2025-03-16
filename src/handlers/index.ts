@@ -20,7 +20,7 @@ export const createAccount = async (req: Request, res: Response) => {
   const handle = slug(req.body.handle, "");
   const handleExist = await User.findOne({ handle });
   if (handleExist) {
-    const error = new Error("Nombre de usuario no disponible");
+    const error = new Error("Nombre de usuario (handle) no disponible");
     res.status(409).json({ error: error.message });
     return;
   }
