@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { body } from "express-validator";
-import { createAccount, login } from "./handlers";
+import { createAccount, getUser, login, updateProfile } from "./handlers";
 import { handleInputErrors } from "./middleware/validation";
+import { authenticate } from "./middleware/auth";
 
 const router = Router();
 
@@ -22,8 +23,21 @@ router.post(
   "/auth/login",
   body("email").isEmail().withMessage("E-mail no válido"),
   body("password").notEmpty().withMessage("El password es obligatorio"),
-
+  handleInputErrors,
   login
+);
+
+// autenticado
+router.get("/user", authenticate, getUser);
+router.patch(
+  "/user",
+  body("handle").notEmpty().withMessage("El handle no puede estar vacío"),
+  body("description")
+    .notEmpty()
+    .withMessage("La descripción no puede estar vacío"),
+  handleInputErrors,
+  authenticate,
+  updateProfile
 );
 
 export default router;

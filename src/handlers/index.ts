@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import slug from "slug";
+import jwt from "jsonwebtoken";
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
 import { validationResult } from "express-validator";
@@ -63,4 +64,34 @@ export const login = async (req: Request, res: Response) => {
   const token = generateJWT({ id: user._id });
 
   res.send(token);
+};
+
+export const getUser = async (req: Request, res: Response) => {
+  res.json(req.user);
+};
+
+export const updateProfile = async (req: Request, res: Response) => {
+  const slug = await import("slug").then((module) => module.default);
+
+  try {
+    const { description } = req.body;
+    const handle = slug(req.body.handle, "");
+    const handleExist = await User.findOne({ handle });
+    // Realiza para que handle no interactue con otros usuarion no autorizados
+    if (handleExist && handleExist.email !== req.user.email) {
+      const error = new Error("Nombre de usuario (handle) no disponible");
+      res.status(409).json({ error: error.message });
+      return;
+    }
+
+    // Actualizar el usuario
+    req.user.description = description;
+    req.user.handle = handle;
+    await req.user.save();
+    res.send("Perfil Actualizado Correctamente");
+  } catch (e) {
+    const error = new Error("Hubo un error");
+    res.status(500).json({ error: error.message });
+    return;
+  }
 };
