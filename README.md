@@ -17,6 +17,10 @@
 - npm i -D @types/cors
 - npm i jsonwebtoken
 - npm i -D @types/jsonwebtoken
+- npm i cloudinary
+- npm i formidable
+- npm i --save-dev @types/formidable
+- npm i uuid
 
 # [DEVTREE](https://github.com/brahan/devrtree)
 
