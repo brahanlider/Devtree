@@ -76,7 +76,8 @@ export const updateProfile = async (req: Request, res: Response) => {
   const slug = await import("slug").then((module) => module.default);
 
   try {
-    const { description } = req.body;
+    const { description, links } = req.body;
+
     const handle = slug(req.body.handle, "");
     const handleExist = await User.findOne({ handle });
     // Realiza para que handle no interactue con otros usuarion no autorizados
@@ -89,6 +90,7 @@ export const updateProfile = async (req: Request, res: Response) => {
     // Actualizar el usuario
     req.user.description = description;
     req.user.handle = handle;
+    req.user.links = links;
     await req.user.save();
     res.send("Perfil Actualizado Correctamente");
   } catch (e) {
