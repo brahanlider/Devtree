@@ -129,3 +129,22 @@ export const uploadImage = async (req: Request, res: Response) => {
     return;
   }
 };
+
+export const getUserByHandle = async (req: Request, res: Response) => {
+  try {
+    const { handle } = req.params;
+    const user = await User.findOne({ handle }).select(
+      "-_id -__v -email -password"
+    );
+    if (!user) {
+      const error = new Error("El Usuario no existe");
+      res.status(404).json({ error: error.message });
+      return;
+    }
+    res.json(user);
+  } catch (e) {
+    const error = new Error("Hubo un error");
+    res.status(500).json({ error: error.message });
+    return;
+  }
+};
